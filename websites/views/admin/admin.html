@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>AsA | Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Style -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body, html{
+  font-family: montserrat;
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+  background-color: gray;
+}
+/* mobile nav */
+.nav_open{
+  width: 100%;
+  height: 100px;
+  background: red;
+}
+.nav_open span{
+  float: right;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+}
+.sidenav a:not(:first-child){
+  margin-top: 70px;
+}
+.sidenav a:hover{
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+/* desktop nav */
+.topnav {
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+.topnav a{
+  position: relative;
+  right: 0;
+  display: none;
+  color: #818181;
+  text-align: center;
+  float: right; 
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  color: #f1f1f1;
+  color: black;
+}
+.topnav .icon {
+  display: none;
+  color: black;
+}
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+#logo{
+  position: relative;
+  top: 7.5px;
+  line-height: 80px;
+  padding: 0 10px;
+  font-size: 35px;
+  font-weight: 600;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+}
+/* body */
+section{
+  margin-top: 65px;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+/* footer */
+.footer-basic {
+  margin-top: 10px;
+  padding:40px 0;
+  color: #4b4c4d;
+  background: transparent;
+}
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+.footer-basic li {
+  padding:0 10px;
+}
+.footer-basic ul a {
+  color: #fff;
+  text-decoration:none;
+  opacity:0.8;
+}
+.footer-basic ul a:hover {
+  opacity:1;
+}
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color: #fff;
+  opacity:0.75;
+}
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+#footer_logo {
+  position: relative;
+  top: 15px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-size: 35px;
+  font-weight: 600;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+}
+/* Desktop */
+@media only screen and (min-width: 600px) {
+#logo{
+  position: relative;
+  top: 7.5px;
+  left: 360px;
+  line-height: 10px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 300;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+}
+.topnav .links {
+  display: flex;
+  justify-content: space-around;
+}
+.topnav .links li {
+  list-style: none;
+}
+.topnav .links a {
+  display: block;
+  padding: 1em;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  text-align: center;
+  display: block;
+}
+section{
+  margin-top: 196px;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+.footer-basic {
+  margin-top: 10px;
+  padding: 40px 0;
+  background: transparent;
+}
+}
+/* Desktop */
+@media screen and (max-width: 600px) {
+.topnav a:not(:first-child) {
+  display: none;
+}
+.topnav a.icon {
+  float: right;
+  display: block;
+}
+.topnav.responsive {
+  position: relative;
+}
+.topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+.sidenav {
+  padding-top: 15px;
+}
+.sidenav a {
+  font-size: 18px;
+}
+}
+.main_text_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_text {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+  #44a2f0, #025eaa);
+  box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 74% 26% 80% 20% / 25% 71% 29% 75%;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  mix-blend-mode: screen;
+}
+.main_text h1{
+  position: relative;
+  top: 35%;
+  text-align: center;
+  font-size: 50px;
+}
+
+
+#card{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.cards{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: 200px;
+  border-radius: 8px;
+  /*
+  background: linear-gradient(
+  #03e3fc, #9803fc);
+  */
+  background: rgba(0, 0, 0, 0.1);
+
+}
+.cards h3{
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+.cards p{
+  position: relative;
+  top: 9%;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<!-- mobile  -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="NAV()">&times;</a>
+  <a id="logout" href="/logout">logout</a>
+</div>
+<!-- desktop -->
+<div class="topnav sticky" id="myTop">
+  <label onclick="home()" id="logo">AsA</label>
+  <a href="javascript:void(0);" class="icon" onclick="NAV(open)">
+  <i class="fa fa-bars"></i></a>
+  <ul class="links">
+    <li><a id="logout" href="/logout">Logout</a></li>
+    </ul>
+</div>
+<section>
+<!-- body -->
+<div class="main_text_container">
+<div class="main_text">
+  <h1 id="text"></h1>
+</div>
+</div>
+<br />
+<select id="websites">
+  <option value="">Admin Websites</option>
+</select>
+<button id="send" type="submit">submit</button>
+<!-- footer -->
+<div class="footer-basic">
+  <footer>
+  <div class="social">
+    <label onclick="home()" id="footer_logo">AsA</label></div>
+<ul class="list-inline">
+  <li class="list-inline-item"><a id="home3" href="/">Home</a></li>
+  <li class="list-inline-item"><a id="shop3" href="/shop">Shop</a></li>
+  <li class="list-inline-item"><a id="about3" href="/about">About</a></li>
+  <li class="list-inline-item"><a id="support3" href="/support">Support</a></li>
+  <li class="list-inline-item"><a id="terms3" href="/terms">Terms</a></li>
+</ul>
+<p class="copyright">
+AsA © 2022
+<br/>
+All rights reserved.</p>
+    </footer>
+  </div>
+</section>
+<!-- Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+<script>
+// sleep 
+function sleep(ms) {
+return new Promise(resolve => setTimeout(resolve, ms));
+}
+// navbar open/close
+async function NAV(message) {
+  if(message){
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("myTop").style.zIndex = "0";
+  }else if(!message){
+  document.getElementById("mySidenav").style.width = "0";
+  await sleep(500)
+  document.getElementById("myTop").style.zIndex = "1";
+  }
+}
+// load
+function load(){
+// nav buttons active
+var url = window.location.pathname
+var result = url.replace("/"," ");
+try{
+document.getElementById(result + "1").classList.add("active")
+document.getElementById(result + "2").classList.add("active")
+document.getElementById(result + "3").classList.add("active")
+}catch(err){
+  console.log(err)
+}
+try{
+document.getElementById("text").innerText = result.toUpperCase()
+}catch(err){
+  console.log(err)
+}
+}
+load()
+// href home
+function home(){
+  location.href = "/home"
+}
+fetch("https://asa-dev.tk/database/admin.json")
+.then((response) => response.json())
+.then((data) => data.sites.forEach(i => {
+let name = i.name
+let url = i.url
+var option = document.createElement("option")
+option.innerText = name
+option.setAttribute("value", url)
+document.getElementById("websites").appendChild(option)
+})
+)
+document.getElementById("send").addEventListener("click", () => {
+  var id = document.getElementById("websites").value
+  location.href = id
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "sites":[
+    {
+      "name":"{add} Home Blog",
+      "url":"/admin/blog/add"
+    },
+    {
+      "name":"{delete} Home Blog",
+      "url":"/admin/blog/delete"
+    },
+    {
+      "name":"{add} Shop Product",
+      "url":"/admin/shop/add"
+    },
+    {
+      "name":"{delete} Shop Products",
+      "url":"/admin/shop/delete"
+    }
+  ]
+}

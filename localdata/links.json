@@ -1,0 +1,52 @@
+[
+  {
+    "tag":"a",
+    "second_tag":null,
+    "href":"/",
+    "text":"Home",
+    "classId_Pat":"id",
+    "classId":"home",
+    "owner":"mySidenav"
+  },
+  {
+    "tag":"li",
+    "second_tag":"a",
+    "href":"/",
+    "text":"Home",
+    "classId_Pat":"id",
+    "classId":"home",
+    "owner":"links"
+  },
+  {
+    "tag":"li",
+    "second_tag":"a",
+    "href":"/",
+    "text":"Home",
+    "classId_Pat":"class",
+    "classId":"list-inline-item",
+    "owner":"list-inline"
+  },
+
+
+  
+  {
+    "tag":"a",
+    "second_tag":null,
+    "settings": true,
+    "href":"/",
+    "text":"Home",
+    "classId_Pat":"id",
+    "classId":"home",
+    "owner":"mySidenav"
+  },
+  {
+    "tag":"li",
+    "second_tag":"a",
+    "settings": true,
+    "href":"/",
+    "text":"Home",
+    "classId_Pat":"id",
+    "classId":"home",
+    "owner":"links"
+  }
+]

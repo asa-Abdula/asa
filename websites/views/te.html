@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Style -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body, html{
+  font-family: montserrat;
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+}
+/* mobile nav */
+.nav_open{
+  width: 100%;
+  height: 100px;
+  background: red;
+}
+.nav_open span{
+  float: right;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align:center;
+}
+.sidenav a {
+  /* padding: 8px 16px 8px 32px; */
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+}
+.sidenav a:not(:first-child){
+  margin-top: 70px;
+}
+.sidenav a:hover{
+  color: black;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+/* desktop nav */
+#topnav {
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+#topnav a{
+  position: relative;
+  right: 0;
+  display: none;
+  color: #818181;
+  text-align: center;
+  float: right; 
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#topnav a:hover {
+  color: #f1f1f1;
+  color: black;
+}
+#topnav .icon {
+  display: none;
+  color: black;
+}
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+#logo{
+  top: 7.5px;
+  line-height: 80px;
+  padding: 0 10px;
+  font-size: 35px;
+  font-weight: 600;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+}
+/* body */
+section{
+  margin-top: 65px;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+/* footer */
+.footer-basic {
+  margin-top: 10px;
+  padding:40px 0;
+  color: #4b4c4d;
+  background: transparent;
+  z-index: -1;
+}
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+  z-index: -1;
+}
+.footer-basic li {
+  padding:0 10px;
+  z-index: -1;
+}
+.footer-basic ul a {
+  color: #fff;
+  text-decoration:none;
+  opacity:0.8;
+  z-index: -1;
+}
+.footer-basic ul a:hover {
+  opacity:1;
+}
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color: #fff;
+  opacity:0.75;
+}
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+#footer_logo {
+  position: relative;
+  text-align: center;
+  top: 7.5px;
+  left: 40%;
+  line-height: 80px;
+  padding: 0 100px;
+  font-size: 35px;
+  font-weight: 600;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+  z-index: -1;
+}
+/* Welcome text */
+.main_text_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_text {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+  #44a2f0, #025eaa);
+  box-shadow: 15px 20px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 74% 26% 80% 20% / 25% 71% 29% 75%;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+  mix-blend-mode: screen;
+}
+.main_text h1{
+  position: relative;
+  top: 35%;
+  text-align: center;
+  font-size: 50px;
+}
+/* Blog cards */
+.cards{
+  position: relative;
+  left: 10%;
+  width: 80%;
+  height: 200px;
+  border-radius: 8px;
+  background: linear-gradient(
+  #03e3fc, #9803fc);
+  /*
+  background: rgba(0, 0, 0, 0.1);
+  */
+  z-index: -1;
+}
+.cards h3{
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+.cards p{
+  position: relative;
+  top: 9%;
+  text-align: center;
+}
+/* settings box */
+.settings {
+  flex: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  max-height: 80%;
+  width: 500px;
+  max-width: 80%;
+}
+.settings_in{
+  position: relative;
+  left: 1%;
+}
+.settings_in label{
+  position: relative;
+}
+.settings_in label, h3, span, a{
+  color: black;
+}
+.settings_in span{
+  font-size: 15px;
+}
+.settings_in button:nth-child(7), span, #translate{
+  position: relative;
+  right: 5px;
+  float: right;
+}
+.settings_in span{
+  position: relative;
+  top: 5px;
+  right: 15px;
+  float: right;
+}
+.fa-gear{
+  float: right;
+}
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+}
+#overlay.overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+.open{
+   transform: translate(-50%, -50%) scale(1);
+}
+.settingsCloseBtn:before{
+  content: "";
+  color: black;
+}
+.settingsCloseBtn:after{
+  content: "";
+  color: red;
+}
+/* cookie box */
+.wrapper{
+position: fixed;
+bottom: 5px;
+left: 5px;
+max-width: 365px;
+background: #fff;
+padding: 25px 25px 30px 25px;
+border-radius: 15px;
+box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.15);
+text-align: center;
+z-index: 2;
+}
+.wrapper.hide{
+opacity: 0;
+pointer-events: none;
+transform: scale(0.8);
+transition: all 0.3s ease;
+}
+.wrapper img{
+max-width: 90px;
+}
+.content header{
+font-size: 25px;
+font-weight: 600;
+}
+.content{
+margin-top: 10px;
+}
+.content p{
+color: #858585;
+margin: 5px 0 20px 0;
+}
+.content .buttons{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.buttons button{
+padding: 10px 20px;
+border: none;
+outline: none;
+color: #fff;
+font-size: 16px;
+font-weight: 500;
+border-radius: 5px;
+background: #FCBA7F;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.buttons button:hover{
+transform: scale(0.97);
+}
+.buttons .item{
+margin: 0 10px;
+}
+.buttons a{
+color: #FCBA7F;
+}
+/* dark mode */
+.white{
+  color: #313131;
+  background-color: #6C6C6C;
+}
+.dark{
+  color: #6C6C6C;
+  background-color: #313131;
+}
+.sidenav.white a{
+  color: #313131;
+}
+.sidenav.dark a{
+  color: #6C6C6C;
+}
+</style>
+<!-- responsive -->
+<style type="text/css" media="all">
+/* desktop */
+@media only screen and (min-width: 600px) {
+#logo{
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 7.5px;
+  line-height: 10px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 300;
+  font: 8vw Azonix Regular !important;
+  font: 11.25vw Roboto;
+  background: -webkit-linear-gradient(115deg, #f90a70 10%, #d37aec 46%, #09e5dc 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 6px transparent;
+  color: rgba(1 1 1 / 85%);
+  letter-spacing: 10px;
+}
+#topnav .links {
+  display: flex;
+  justify-content: space-around;
+}
+#topnav .links li {
+  list-style: none;
+}
+#topnav .links a {
+  display: block;
+  padding: 1em;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  text-align: center;
+  display: block;
+}
+section{
+  margin-top: 196px;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+.footer-basic {
+  margin-top: 10px;
+  padding: 40px 0;
+  background: transparent;
+}
+.settingsCloseBtn{
+  position: fixed;
+  bottom: 110px;
+  left: 460px;
+  font-size: 60px;
+}
+#card{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+.about, .projects{
+  display: none;
+}
+}/* Desktop ende */
+/* mobile */
+@media screen and (max-width: 600px) {
+#topnav a:not(:first-child) {
+  display: none;
+}
+#topnav a.icon {
+  float: right;
+  display: block;
+  z-index: 4;
+}
+#topnav.responsive {
+  position: relative;
+}
+#topnav.responsive .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+.sidenav {
+  padding-top: 15px;
+}
+.sidenav a {
+  font-size: 18px;
+}
+.settingsCloseBtn{
+  position: absolute;
+  bottom: 110px;
+  left: 290px;
+  font-size: 60px;
+}
+ .cards {
+  margin-top: 15px;
+  top: 30px;
+  position: sticky;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+}
+.cards:nth-child(1n) {
+  top: 20px;
+}
+.cards:nth-child(2n) {
+  top: 40px;
+}
+.cards:nth-child(3n) {
+  top: 60px;
+}
+.cards:nth-child(4n) {
+  top: 80px;
+}
+.cards:nth-child(5n) {
+  top: 100px;
+}
+.cards:nth-child(6n) {
+  top: 120px;
+}
+.cards:nth-child(7n) {
+  top: 140px;
+}
+.cards:nth-child(8n) {
+  top: 160px;
+}
+.cards:nth-child(9n) {
+  top: 180px;
+}
+.cards:nth-child(10n) {
+  top: 200px;
+}
+.cards_header {
+  text-align:center;
+  padding: 0.4em 2em;
+  position: sticky;
+  z-index: 1;
+  bottom: calc(var(--b) * 2em);
+  top: calc(var(--t) * 2em);
+}
+}/* mobile ende */
+  </style>
+</head>
+<body data-mode class="body">
+    <div class="wrapper">
+      <img src="#" alt="">
+      <div class="content">
+        <header>Cookies Consent</header>
+        <p>This website use cookies to ensure you get the best experience on our website.</p>
+        <div class="buttons">
+          <button class="item">I understand</button>
+          <a onclick="learnCookie()" class="item">Learn more</a>
+        </div>
+      </div>
+    </div>
+    
+<!-- settings -->
+<div class="settings" data-target="settings">
+  <div class="settings_in">
+        <a class="settingsCloseBtn" data-name="settings" data-type="close" onclick="settings(this)">&times;</a>
+    <h3>Settings</h3>
+    <label>Id:</label>
+    <span id="id"></span>
+    <br />
+    <label>Mode:</label>
+  <button id="mode" onclick="change(this)" type="button"></button>
+  <br />
+    <label>Cookies:</label>
+  <span disabled id="cookies" type="button"></span>
+  <br />
+  <label>Translate:</label>
+  <select id="translate">
+</select>
+  </div>
+  </div>
+
+  <div id="overlay"></div>
+  
+<!-- mobile  -->
+<div mySidenav data-mode id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="NAV()">&times;</a>
+
+</div>
+<!-- desktop -->
+  <div class="sticky" id="topnav">
+  <label data-href="home" onclick="href(this)" id="logo">AsA</label>
+  <a href="javascript:void(0);" class="icon" onclick="NAV(open)">
+  <i class="fa fa-bars"></i></a>
+  <ul links class="links">
+    
+    </ul>
+</div>
+<section>
+<!-- body -->
+<div data-animate data-animation="w3-animate-zoom" class="main_text_container">
+<div class="main_text">
+  <h1 id="text"></h1>
+</div>
+</div>
+<br />
+<div id="card" class="conabout">
+  <h2 class="cards_header" style="--t:0; --b:3;">About Me</h2>
+
+</div>
+<br />
+<br />
+<br />
+<div id="card" class="conprojects">
+  <h2 class="cards_header" style="--t:0; --b:3;">About Projects</h2>
+
+</div>
+<!-- footer -->
+<div data-mode class="footer-basic">
+  <footer>
+  <div class="social">
+      <label data-href="home" onclick="href(this)" id="logo">AsA</label>
+  </div>
+<ul list-inline class="list-inline">
+  
+</ul>
+<p class="copyright">
+AsA © 2023
+<br/>
+All rights reserved.</p>
+</footer>
+</div>
+</section>
+<!-- Script -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+// data
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1500,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+fetch("https://asa-dev.tk/database/blog.json")
+.then((response) => response.json())
+.then((data) => data.forEach(i => {
+var animation = RnAnimation("LeftRight")
+let id = i.id
+let category = i.category
+let title = i.title
+let description = i.description
+let card = document.createElement("div")
+card.classList.add("cards", category)
+let titl = document.createElement("h3")
+titl.innerText = title
+card.appendChild(titl)
+let descriptio = document.createElement("p")
+descriptio.innerText = description
+card.appendChild(descriptio)
+card.setAttribute("data-animate", "")
+card.setAttribute("data-animation",`w3-animate-${animation}`)
+document.querySelector(`.con${category}`).appendChild(card);
+})
+).catch(()=>{
+// alert
+  Toast.fire({
+  icon: 'info',
+  title: 'Failed to load Blog database!'
+})
+})
+const countries = {
+"am-ET": "Amharic",
+"ar-SA": "Arabic",
+"be-BY": "Bielarus",
+"bem-ZM": "Bemba",
+"bi-VU": "Bislama",
+"bjs-BB": "Bajan",
+"bn-IN": "Bengali",
+"bo-CN": "Tibetan",
+"br-FR": "Breton",
+"bs-BA": "Bosnian",
+"ca-ES": "Catalan",
+"cop-EG": "Coptic",
+"cs-CZ": "Czech",
+"cy-GB": "Welsh",
+"da-DK": "Danish",
+"dz-BT": "Dzongkha",
+"de-DE": "German",
+"dv-MV": "Maldivian",
+"el-GR": "Greek",
+"en-GB": "English",
+"es-ES": "Spanish",
+"et-EE": "Estonian",
+"eu-ES": "Basque",
+"fa-IR": "Persian",
+"fi-FI": "Finnish",
+"fn-FNG": "Fanagalo",
+"fo-FO": "Faroese",
+"fr-FR": "French",
+"gl-ES": "Galician",
+"gu-IN": "Gujarati",
+"ha-NE": "Hausa",
+"he-IL": "Hebrew",
+"hi-IN": "Hindi",
+"hr-HR": "Croatian",
+"hu-HU": "Hungarian",
+"id-ID": "Indonesian",
+"is-IS": "Icelandic",
+"it-IT": "Italian",
+"ja-JP": "Japanese",
+"kk-KZ": "Kazakh",
+"km-KM": "Khmer",
+"kn-IN": "Kannada",
+"ko-KR": "Korean",
+"ku-TR": "Kurdish",
+"ky-KG": "Kyrgyz",
+"la-VA": "Latin",
+"lo-LA": "Lao",
+"lv-LV": "Latvian",
+"men-SL": "Mende",
+"mg-MG": "Malagasy",
+"mi-NZ": "Maori",
+"ms-MY": "Malay",
+"mt-MT": "Maltese",
+"my-MM": "Burmese",
+"ne-NP": "Nepali",
+"niu-NU": "Niuean",
+"nl-NL": "Dutch",
+"no-NO": "Norwegian",
+"ny-MW": "Nyanja",
+"ur-PK": "Pakistani",
+"pau-PW": "Palauan",
+"pa-IN": "Panjabi",
+"ps-PK": "Pashto",
+"pis-SB": "Pijin",
+"pl-PL": "Polish",
+"pt-PT": "Portuguese",
+"rn-BI": "Kirundi",
+"ro-RO": "Romanian",
+"ru-RU": "Russian",
+"sg-CF": "Sango",
+"si-LK": "Sinhala",
+"sk-SK": "Slovak",
+"sm-WS": "Samoan",
+"sn-ZW": "Shona",
+"so-SO": "Somali",
+"sq-AL": "Albanian",
+"sr-RS": "Serbian",
+"sv-SE": "Swedish",
+"sw-SZ": "Swahili",
+"ta-LK": "Tamil",
+"te-IN": "Telugu",
+"tet-TL": "Tetum",
+"tg-TJ": "Tajik",
+"th-TH": "Thai",
+"ti-TI": "Tigrinya",
+"tk-TM": "Turkmen",
+"tl-PH": "Tagalog",
+"tn-BW": "Tswana",
+"to-TO": "Tongan",
+"tr-TR": "Turkish",
+"uk-UA": "Ukrainian",
+"uz-UZ": "Uzbek",
+"vi-VN": "Vietnamese",
+"wo-SN": "Wolof",
+"xh-ZA": "Xhosa",
+"yi-YD": "Yiddish",
+"zu-ZA": "Zulu"
+}
+
+// load
+for (let country_code in countries) {
+let selected = document.getElementById("translate")
+let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+selected.insertAdjacentHTML("beforeend", option);
+}
+
+// sleep 
+function sleep(ms) {
+return new Promise(resolve => setTimeout(resolve, ms));
+}
+// navbar open/close
+async function NAV(message) {
+  document.querySelector(".settingsCloseBtn").click()
+  if(message){
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("topnav").style.zIndex = "0";
+  }else if(!message){
+  document.getElementById("mySidenav").style.width = "0";
+  await sleep(500)
+  document.getElementById("topnav").style.zIndex = "1";
+  }
+}
+
+// load
+var overlay = document.getElementById("overlay")
+// get data
+  var bank = JSON.parse(localStorage.getItem(`settings`))
+  var mode = document.getElementById("mode")
+  var cookies = document.getElementById("cookies")
+  var dataMode = document.querySelectorAll("[data-mode]")
+  var phoneMode = window.matchMedia('(prefers-color-scheme : dark)').matches
+  var phone_mode = phoneMode ? "dark" : "white"
+// set data
+  var idTXT = document.getElementById("id")
+  var id = id(10)
+function load(){
+// console
+console.info("Welcome if you see any Report Error in the console please Contact us!")
+// nav buttons active
+var url = window.location.pathname
+var result = url.replace("/"," ");
+var header = document.querySelector("head")
+var title = `<title>${result.toUpperCase()}</title>`
+header.insertAdjacentHTML("beforeend",title)
+try{
+document.getElementById("text").innerText = result.length == 5 ? result.toUpperCase() : "ERROR"
+}catch(err){
+  console.error(`Report Error: 1 / ${err}`)
+}
+  var objToday = new Date(),
+	weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+	dayOfWeek = weekday[objToday.getDay()],
+	domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+	dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+	curMonth = months[objToday.getMonth()],
+	curYear = objToday.getFullYear(),
+	curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+	curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+	curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+	curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+var today = `${dayOfWeek} ${dayOfMonth} of ${curMonth}, ${curYear} ${curHour}:${curMinute}:${curSeconds}${curMeridiem}`
+localStorage.setItem("login", today)
+// ip
+fetch('https://api.ipify.org?format=json')
+.then((response) => response.json())
+.then((data) => localStorage.setItem("ip", data.ip))
+.catch( async ()=>{
+// alert
+await sleep(1500)
+  Toast.fire({
+  icon: 'info',
+  title: 'Turn VPN/Proxy off!'
+})
+})
+// browser
+if(Browser()){
+localStorage.setItem("browser", "Mobile")
+}else{
+localStorage.setItem("browser", "Desktop")
+}
+// platform + language
+localStorage.setItem("platform", navigator.userAgent)
+localStorage.setItem("language", navigator.language || "English")
+// data for settings
+var language = document.getElementById("translate")
+  if(!bank){
+    var notSet = []
+    notSet.push({
+      id:id,
+      mode:phone_mode || "white",
+      cookies:"not accepted",
+      language: navigator.language || "English"
+    })
+    localStorage.setItem(`settings`,JSON.stringify(notSet))
+    location.reload()
+  }
+  
+  if(bank){
+    idTXT.innerText = getdata("id")
+    mode.innerText = getdata("mode")
+    cookies.innerText = getdata("cookies")
+    language.value = getdata("language")
+    var text = document.querySelectorAll("#card h2")
+  text.forEach(function(i){
+    var txt = i.innerText.toUpperCase()
+    var to = getdata("language")
+    var main = "en-GB"
+    if(to != main){
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${txt}&langpair=${main}|${to}`;
+    fetch(apiUrl).then(res => res.json()).then(data => {
+    i.innerText = data.responseData.translatedText.toLowerCase()
+   }).catch( async ()=>{
+// alert
+await sleep(1500)
+  Toast.fire({
+  icon: 'info',
+  title: 'Failed to translating!'
+})
+})
+}
+  })
+ // location.reload()
+ }
+  // set data
+dataMode.forEach(function(i){
+  i.classList.add(mode.innerText)
+  })
+}
+load()
+// href
+function href(value){
+  location.href = `/${value.getAttribute("data-href")}`
+}
+
+// get data
+function getdata(value){
+  let data;
+  bank.forEach((i) => {
+    if(!value){
+      console.error("Report Error: 2")
+    }else if(value == "mode"){
+      data = i.mode
+    }else if(value == "cookies"){
+      data = i.cookies
+    }else if(value == "id"){
+      data = i.id
+    }else if(value == "language"){
+      data = i.language
+    }else{
+      console.error("Report Error: 3")
+    }
+  })
+  return data
+}
+// change mode
+function change(value){
+  var action = value.getAttribute("id")
+  var data = []
+if(action == "mode"){
+  if(mode.innerText == "white"){
+    data.push({
+      id:getdata("id"),
+      mode: "dark",
+      cookies: getdata("cookies"),
+      language: getdata("language")
+    })
+    mode.innerText = "dark"
+// alert
+  Toast.fire({
+  icon: 'success',
+  title: 'Setted to Dark mode'
+})
+  }else if(mode.innerText == "dark"){
+    data.push({
+      id:getdata("id"),
+      mode: "white",
+      cookies: getdata("cookies"),
+      language: getdata("language")
+    })
+    mode.innerText = "white"
+// alert
+  Toast.fire({
+  icon: 'success',
+  title: 'Setted to White mode'
+})
+
+  }
+}
+dataMode.forEach(function(i){
+  var modeData = mode.innerText
+  var last = i.classList[1]
+  i.classList.remove(last)
+  i.classList.add(mode.innerText)
+})
+document.querySelector(".settingsCloseBtn").click()
+  localStorage.removeItem(`settings`)
+  localStorage.setItem(`settings`,JSON.stringify(data))
+ // location.reload()
+}
+function settings(value) {
+  var product = value.getAttribute('data-name')
+  var type = value.getAttribute("data-type")
+  var card = document.querySelector(".settings")
+  let target = card.getAttribute('data-target');
+  if(type == "open"){
+    if(product == target) {
+      card.classList.add('open')
+      overlay.classList.add("overlay")
+   }
+  }else if(type == "close"){
+    if(product == target) {
+      card.classList.remove('open')
+      overlay.classList.remove("overlay")
+   }
+  }
+ }
+ 
+ function id(length) {
+   var result = 'ey-';
+   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   var charactersLength = characters.length;
+   for (var i = 0; i < length; i++) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+ }
+// get data for cookie
+let data;
+function getDataCookie(value){
+  if(value == "login"){
+    data = localStorage.getItem("login")
+    return data
+  }else if(value == "ip"){
+    data = localStorage.getItem("ip")
+    return data
+  }else if(value == "browser"){
+    data = localStorage.getItem("browser")
+    return data
+  }else if(value == "platform"){
+    data = localStorage.getItem("platform")
+    return data
+  }else if(value == "language"){
+    data = localStorage.getItem("language")
+    return data
+  }
+
+}
+
+const cookieBox = document.querySelector(".wrapper"),
+acceptBtn = cookieBox.querySelector("button");
+acceptBtn.onclick = async()=>{
+//setting cookie for 1 month, after one month it'll be expired automaticall
+var cookie = [{
+  login: getDataCookie("login"),
+  ip: getDataCookie("ip"),
+  platform: navigator.userAgent,
+  browser: getDataCookie("browser"),
+  language: navigator.language
+}]
+
+document.cookie = `${month()}=${JSON.stringify(cookie)};max-age:`+60*60*24*30
+if(document.cookie){ //if cookie is set
+cookieBox.classList.add("hide"); //hide cookie box
+var data = []
+    data.push({
+      id:getdata("id"),
+      mode:getdata("mode"),
+      cookies: "accepted",
+      language: getdata("language")
+    })
+  cookies.innerText = "accepted"
+  localStorage.removeItem(`settings`)
+  localStorage.setItem(`settings`,JSON.stringify(data))
+// alert
+  Toast.fire({
+  icon: 'success',
+  title: 'Cookie accepted'
+})
+await sleep(1500)
+send(JSON.stringify(cookie), "https://asa-dev.tk/send")
+}else{ //if cookie not set then alert an error
+alert("Cookie can't be set! Please unblock this site from the cookie setting of your browser.");
+}
+}
+let checkCookie = document.cookie.indexOf(`${month()}`); 
+if(checkCookie != -1){
+  cookieBox.classList.add("hide")
+}else{
+  cookieBox.classList.remove("hide");
+  cookieRequest("not accepted")
+}
+function month(){
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const newmonth = new Date();
+let name = `${month[newmonth.getMonth()]}-${newmonth.getFullYear()}`
+return name;
+}
+// set cookie
+function cookieRequest(value){
+  var data = []
+    data.push({
+      id: getdata("id"),
+      mode: getdata("mode"),
+      cookies: value == "1" ? getdata("cookies") : value,
+      language: getdata("language")
+    })
+  localStorage.removeItem(`settings`)
+  localStorage.setItem(`settings`,JSON.stringify(data))
+}
+// get data if mobile / desktop
+function Browser() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem) 
+    });
+}
+// set language
+document.getElementById("translate").addEventListener("change", async () =>{
+  var value = document.getElementById("translate").value
+ var data = []
+    data.push({
+      id:getdata("id"),
+      mode:getdata("mode"),
+      cookies: getdata("cookies"),
+      language: value
+    })
+  cookies.value = value
+  localStorage.removeItem(`settings`)
+  localStorage.setItem(`settings`,JSON.stringify(data))
+// alert
+  Toast.fire({
+  icon: 'success',
+  title: 'language setted to ' + countries[value]
+})
+  await sleep(1500)
+  location.reload()
+})
+// learn more cookie
+function learnCookie(){
+Swal.fire({
+  title: 'Our Cookies save',
+  html: "Platform/OS,<br/>language,<br/>Accepted time,<br/>IP",
+  icon: 'info',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, accept it!'
+  }).then((result) => {
+if (result.isConfirmed) {
+    acceptBtn.click()
+  }
+ })
+}
+// send cookie data
+function send(value, action){
+  var value = JSON.parse(value)
+  var form = document.createElement("form")
+  form.setAttribute("hidden","true")
+  form.setAttribute("action",action)
+  form.setAttribute("method", "POST")
+  value.forEach(function(i){
+    var name = Object.keys(i);
+    var redricet = window.location.pathname
+    var url = document.createElement("input")
+    url.setAttribute("name","url")
+    url.setAttribute("value", redricet)
+    var id = document.createElement("input")
+    id.setAttribute("name","id")
+    id.setAttribute("value", getdata("id"))
+    var login = document.createElement("input")
+    login.setAttribute("name","login")
+    login.setAttribute("value", i.login)
+    var ip = document.createElement("input")
+    ip.setAttribute("name","ip")
+    ip.setAttribute("value", i.ip)
+    var platform = document.createElement("input")
+    platform.setAttribute("name","platform")
+    platform.setAttribute("value", i.platform)
+    var browser = document.createElement("input")
+    browser.setAttribute("name","browser")
+    browser.setAttribute("value", i.browser)
+    var language = document.createElement("input")
+    language.setAttribute("name","language")
+    language.setAttribute("value", i.language)
+      form.appendChild(url)
+      form.appendChild(id)
+      form.appendChild(login)
+      form.appendChild(ip)
+      form.appendChild(browser)
+      form.appendChild(platform)
+      form.appendChild(language)
+      document.querySelector(".body").appendChild(form)
+      form.submit()
+  })
+}
+// load links
+fetch("https://asa-dev.tk/database/links.json")
+.then((response) => response.json())
+.then((data) => data.forEach(i => {
+let tag = i.tag // a / li
+let second_tag = i.second_tag // li + a
+let href = i.href // /home
+let text = i.text // home
+let owner_pat = i.classId_Pat // class / id
+let owner_class = i.classId
+var owner = i.owner // mySidenav
+var settings = i.settings
+let element = document.createElement(tag)
+element.setAttribute(owner_pat, owner_class)
+if(second_tag){
+  if(!settings){
+  let second = document.createElement(second_tag)
+  second.setAttribute(owner_pat, owner_class)
+  second.setAttribute("href", href)
+  second.append(text)
+  element.appendChild(second)
+  }else{
+  var settingsElement = `<a onclick="settings(this)" data-name="settings" data-type="open">Settings</a>`
+  element.insertAdjacentHTML("beforeend",settingsElement)
+  }
+}else{
+if(!settings){
+  element.setAttribute("href", href)
+  element.append(text)
+}else{
+  var settingsElement = `<a onclick="settings(this)" data-name="settings" data-type="open">Settings</a>`
+  element.insertAdjacentHTML("beforeend",settingsElement)
+  }
+}
+var getOwner = document.querySelector(`[${owner}]`)
+getOwner.appendChild(element)
+})
+).catch( async ()=>{
+// alert
+await sleep(1500)
+  Toast.fire({
+  icon: 'info',
+  title: 'Failed to load Links database!'
+})
+})
+
+function cards(){
+var time = 3500
+if(window.innerWidth > 600){
+var about_length = 0;
+var projects_length = 0;
+about();
+projects();
+// about func
+function about() {
+  var i;
+  var x = document.getElementsByClassName("about");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  about_length++;
+  if (about_length > x.length) {about_length = 1}    
+  x[about_length-1].style.display = "block";  
+  setTimeout(about, time);
+}
+// projects func
+function projects() {
+  var i;
+  var x = document.getElementsByClassName("projects");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  projects_length++;
+  if (projects_length > x.length) {projects_length = 1}    
+  x[projects_length-1].style.display = "block";  
+  setTimeout(projects, time);
+  if(x){
+    clearInterval(cards_timer)
+  }
+}
+}}
+var cards_timer = setInterval(cards, 1000)
+
+
+
+
+
+let elem = document.querySelectorAll("[data-animate]")
+window.addEventListener('scroll', fadeIn ); 
+function fadeIn() {
+elem.forEach(function(i){
+  var data = i.getAttribute("data-animation")
+  var distInView = i.getBoundingClientRect().top - window.innerHeight + 20;
+  if (distInView < 0) {
+    i.classList.add(data);
+  } else {
+    i.classList.remove(data);
+  }
+})
+}
+fadeIn()
+
+function RnAnimation(value){
+  var LeftRight = ["left", "right"]
+  var TopBottom = ["top", "bottom"]
+  var all = ["left", "right", "top", "bottom"]
+  let item;
+  if(value == "LeftRight"){
+    item = LeftRight[Math.floor(Math.random()*LeftRight.length)];
+  }else if(value == "TopBottom"){
+    item = TopBottom[Math.floor(Math.random()*TopBottom.length)];
+  }else if(value == "all"){
+    item = all[Math.floor(Math.random()*all.length)];
+  }else{
+    console.error("Report Error: 4")
+  }
+  return item;
+}
+</script>
+</body>
+</html>
